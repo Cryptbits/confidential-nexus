@@ -55,25 +55,7 @@ const qc = new QueryClient({
   },
 });
 
-/* ── Zama FHE bridge ──────────────────────────────────────────────
-   @zama-fhe/react-sdk's official wagmi adapter (`/wagmi`) requires
-   wagmi v3 (it calls wagmi's `useConnection`, introduced in v3).
-   RainbowKit only supports wagmi v2 (`peerDependencies: wagmi ^2.9.0`)
-   as of this writing, so the two can't be combined directly.
 
-   Fix: use the SDK's viem adapter instead (`@zama-fhe/sdk/viem`).
-   wagmi v2's `useWalletClient()` / `usePublicClient()` already return
-   real viem `WalletClient` / `PublicClient` instances under the hood,
-   so this bridges cleanly with zero changes to the wallet/connect UI.
-
-   ZamaProvider always needs a `walletClient` in its config, and every
-   hook throws if called with no ZamaProvider ancestor at all — so
-   ZamaBridge always mounts one. Before a wallet connects (or during
-   Next's server-side render pass), it uses a read-only placeholder
-   walletClient with no account; real shield/unshield/decrypt actions
-   are already gated behind `isConnected` in the UI, so the placeholder
-   is never actually used to sign anything. Once a real wallet connects,
-   the config swaps to the real walletClient automatically. ── */
 function useZamaConfig() {
   const { isConnected } = useAccount();
   const { data: liveWalletClient } = useWalletClient();

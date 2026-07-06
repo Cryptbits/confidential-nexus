@@ -318,7 +318,7 @@ export default function WrapPage() {
             </div>
             <div style={{ padding:"16px 18px", display:"flex", flexDirection:"column", gap:12 }}>
               {(tab==="wrap"
-                ? ["SDK auto-approves ERC-20 allowance",
+                ? ["SDK approves ERC-20 allowance",
                    `Calls wrap() on the ERC-7984 contract`,
                    "Balance encrypted onchain via Zama FHE",
                    `${pair?.cSymbol} credited to your address`]

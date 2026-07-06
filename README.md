@@ -1,6 +1,6 @@
 # Confidential Nexus
 
-The canonical dApp for the **[Zama Wrappers Registry](https://docs.zama.org/protocol/protocol-apps/confidential-tokens/wrapper-registry)** — browse every ERC-20 ↔ ERC-7984 wrapper pair on Sepolia and Ethereum Mainnet, wrap and unwrap tokens, decrypt confidential balances via EIP-712, and mint test tokens from the official Sepolia faucet.
+The canonical dApp for the **[Wrappers Registry](https://docs.zama.org/protocol/protocol-apps/confidential-tokens/wrapper-registry)** — browse every ERC-20 ↔ ERC-7984 wrapper pair on Sepolia and Ethereum Mainnet, wrap and unwrap tokens, decrypt confidential balances via EIP-712, and mint test tokens from the official Sepolia faucet.
 
 ---
 
@@ -79,7 +79,7 @@ app/
   providers.tsx         wagmi + RainbowKit + React Query setup
 components/
   AppShell.tsx           Sidebar, topbar, responsive nav shell
-  Logos.tsx              Inline SVG brand marks (Zama, Confidential Nexus)
+  Logos.tsx              Inline SVG brand marks (Confidential Nexus)
 lib/
   contracts.ts           Registry + pair addresses, ABIs, CUSTOM_PAIRS
   utils.ts               Formatting, explorer links, error messages

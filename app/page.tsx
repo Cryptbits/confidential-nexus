@@ -32,17 +32,22 @@ export default function Home() {
 
         <div className="hero-eyebrow">Confidential Wrapper Registry</div>
 
-        <h1 className="hero-title">
-          <span className="hero-gold">Confidential</span><br />
-          <span className="hero-white">Nexus</span>
+        <h1
+          className="hero-title"
+          style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}
+        >
+          <span style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+            <span className="hero-gold">Confidential</span>
+            <span className="hero-white">Nexus</span>
+          </span>
         </h1>
 
         <p className="hero-sub">
-          The canonical dApp for the{" "}
+          The canonical dApp {" "}
           <a href="https://docs.zama.org/protocol/protocol-apps/confidential-tokens/wrapper-registry"
             target="_blank" rel="noreferrer"
             style={{ color:"var(--gold)", fontWeight:600, textDecoration:"none" }}>
-            Zama Wrappers Registry
+            Wrappers Registry
           </a>
           {" "}browse, wrap, decrypt and monitor every{" "}
           <strong>ERC-20 ↔ ERC-7984</strong> pair, live on{" "}

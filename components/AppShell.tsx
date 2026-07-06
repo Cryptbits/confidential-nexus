@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useChainId } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Home, LayoutGrid, ArrowLeftRight, KeyRound, Droplets, Code2, Menu, X } from "lucide-react";
-import { ZamaWordmark, CnWordmark } from "./Logos";
+import { CnWordmark } from "./Logos";
 
 const NAV = [
   { href:"/",         label:"Home",     Icon:Home         },
@@ -27,20 +27,20 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   const sidebar = (
     <>
-      {/* Brand — height === --topbar-h (60px) for perfect flush alignment */}
+
       <div className="sb-brand">
-        <ZamaWordmark markSize={26} />
-        <span className="sb-powered">Powered by Zama Protocol</span>
+       <CnWordmark />
+       <span className="sb-powered">Powered by Confidential Nexus</span>
       </div>
 
       <nav className="sb-nav">
-        {/* Network badge */}
+        
         <div className={`sb-net ${isSepolia ? "sb-net-sep" : "sb-net-main"}`}>
           <span className="net-dot" />
           {isSepolia ? "Sepolia Testnet" : "Ethereum Mainnet"}
         </div>
 
-        {/* Section divider — same pattern as all page section headers */}
+        
         <div className="sb-section">
           <span className="sb-section-label">Navigation</span>
           <div className="sb-section-line" />
@@ -61,25 +61,22 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="shell">
-      {/* Desktop sidebar */}
+      
       <aside className="sidebar">{sidebar}</aside>
 
-      {/* Mobile sidebar */}
+      
       {open && <div className="overlay" onClick={() => setOpen(false)} />}
       <aside className={`sidebar sidebar-mobile ${open ? "open" : ""}`}>{sidebar}</aside>
 
-      {/* Main column */}
+      
       <div className="main-col">
-        {/* Topbar — exactly 60px, flush with sidebar brand */}
+        
         <header className="topbar">
           <div className="topbar-left">
             <button className="hamburger btn" onClick={() => setOpen(v => !v)} aria-label="Toggle menu">
               {open ? <X size={16} /> : <Menu size={16} />}
             </button>
-            {/* Confidential Nexus wordmark — desktop topbar */}
-            <div style={{ display:"flex" }}>
-              <CnWordmark />
-            </div>
+            
           </div>
           <div className="topbar-right">
             <div className={`net-pill ${isSepolia ? "net-sep" : "net-main"}`}>
@@ -90,7 +87,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        {/* Page content */}
         <main className="page-wrap">
           {children}
         </main>
